@@ -17,7 +17,7 @@ class WindowedTimeSeriesTest extends FlatSpec {
     val b7 = Bar(1.2, 1.1, 1.4, 1.7)
     val b8 = Bar(1.2, 1.1, 1.4, 1.8)
     val b9 = Bar(1.2, 1.1, 1.4, 1.9)
-    val b10 = Bar(1.2, 1.1, 1.4, 1.10)
+    val b10 = Bar(1.2, 1.1, 1.4, 1.1)
 
     implicit val ctx: Ctx.Owner = Ctx.Owner.safe()
 

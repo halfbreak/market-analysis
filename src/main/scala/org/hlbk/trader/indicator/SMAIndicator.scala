@@ -5,10 +5,12 @@ import rx.{Ctx, Rx}
 
 class SMAIndicator(timeSeries: TimeSeries, period: Integer)(implicit val ctx: Ctx.Owner) extends Indicator {
 
+  val r = Rx {
+    timeSeries.getSequence().takeRight(period).map(_.close).sum / period
+  }
+
   override def value: Double = {
-    Rx {
-      timeSeries.getSequence().takeRight(period).map(_.close).sum / period
-    }.now
+    r.now
   }
 
 }
